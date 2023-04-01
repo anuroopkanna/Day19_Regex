@@ -39,21 +39,30 @@ public class UserRegistration {
         else {
             System.out.println("Invalid");
         }
+        //rule1: minimum 8 chracters
         System.out.print("Enter Mobile Password:- ");
         String password = sc.next();
         Pattern pattern5 = Pattern.compile("^[a-z]{8}$");
         Matcher matcher5 = pattern5.matcher(password);
         if(matcher5.matches()){
-            System.out.println("valid");
+            System.out.println("valid password_rule1");
         }
         else {
-            System.out.println("Invalid");
+            System.out.println("Invalid password)rule1");
         }
+        //rule2: minimum 8 chracters with atleat 1 capital chracter
         Pattern pattern6 = Pattern.compile("^[A-Za-z]{8,}$");
         Matcher matcher6 = pattern.matcher("mySecretPassword");
         if (matcher.matches())
-            System.out.println("valid password_rule1");
+            System.out.println("valid password_rule2");
         else
-            System.out.println("Invalid password)rule1");
+            System.out.println("Invalid password_rule2");
+        //rule3: minimum 8 chracters with atleat 1 capital chracter and 1 numeric word
+        Pattern pattern7 = Pattern.compile("^(?=[a-z]*[A-Z])(?=.*[0-9]).{8,}$");
+        Matcher matcher7 = pattern7.matcher("PPPass8word");
+        if (matcher7.matches())
+            System.out.println("valid password_rule3");
+        else
+            System.out.println("Invalid password_rule3");
     }
 }
