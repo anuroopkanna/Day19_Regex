@@ -49,8 +49,6 @@ public class UserRegistration {
         else {
             System.out.println("Invalid");
         }
-        /*System.out.println("Enter Secret password: ");
-        String password = sc.next();*/
         Pattern pattern6 = Pattern.compile("^[A-Za-z]{8,}$");
         Matcher matcher6 = pattern.matcher("mySecretPassword");
         if (matcher.matches())
