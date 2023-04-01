@@ -64,5 +64,13 @@ public class UserRegistration {
             System.out.println("valid password_rule3");
         else
             System.out.println("Invalid password_rule3");
+        //rule4: minimum 8 chracters with atleat 1 capital chracter and 1 numeric word
+        // and one special chracter
+        Pattern pattern8 = Pattern.compile("^(?=[a-z]*[A-Z])(?=.*[0-9])(?=.*[\\W_]).{8,}$");
+        Matcher matcher8 = pattern8.matcher("PPPass8*word");
+        if (matcher8.matches())
+            System.out.println("valid password_rule4");
+        else
+            System.out.println("Invalid password_rule4");
     }
 }
