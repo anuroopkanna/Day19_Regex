@@ -21,7 +21,7 @@ public class UserRegistration {
             System.out.println("Invalid");
         System.out.print("Enter Email id:- ");
         String Email = sc.next();
-        Pattern pattern3 = Pattern.compile("^[0-9a-zA-Z]+([a-z0-9A-Z]+)*[@][a-zA-Z]+[.][a-z]{2,4}([.][a-z]{2})?$");
+        Pattern pattern3 = Pattern.compile("^[0-9a-zA-Z]+[.]([a-z0-9A-Z]+)*[@][a-zA-Z]+[.][a-z]{2,4}([.][a-z]{2})?$");
         Matcher matcher3 = pattern3.matcher(Email);
         if(matcher3.matches()){
             System.out.println("valid");
@@ -48,7 +48,7 @@ public class UserRegistration {
             System.out.println("valid password_rule1");
         }
         else {
-            System.out.println("Invalid password)rule1");
+            System.out.println("Invalid password_rule1");
         }
         //rule2: minimum 8 chracters with atleat 1 capital chracter
         Pattern pattern6 = Pattern.compile("^[A-Za-z]{8,}$");
@@ -72,5 +72,25 @@ public class UserRegistration {
             System.out.println("valid password_rule4");
         else
             System.out.println("Invalid password_rule4");
+        //uc9
+        String text = "Here are some sample email addresses:"+
+                "        //  1. abc@yahoo.com,\n" +
+                "        //• 2. abc-100@yahoo.com,\n" +
+                "        //• 3. abc.100@yahoo.com\n" +
+                "        //• 4. abc111@abc.com,\n" +
+                "        //• 5. abc-100@abc.net,\n" +
+                "        //• 6. abc.100@abc.com.au\n" +
+                "        //• 7. abc@1.com,\n" +
+                "        //• 8. abc@gmail.com.com\n" +
+                "        //• 9. abc+100@gmail.com";
+        String emailPattern = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}";
+        Pattern pattern9 = Pattern.compile(emailPattern);
+        Matcher matcher9 = pattern9.matcher(text);
+        // Iterate over the matches and print each email address
+        System.out.println("Valid email are : ");
+        while (matcher9.find()) {
+            String email = matcher9.group();
+            System.out.println(email);
+        }
     }
 }
