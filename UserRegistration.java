@@ -29,5 +29,16 @@ public class UserRegistration {
         else {
             System.out.println("Invalid");
         }
+        System.out.print("Enter Mobile number:- ");
+        String mobileNumber = sc.next();
+        Pattern pattern4 = Pattern.compile("^[0-9]{2,}[0-9]{10,}$");
+        Matcher matcher4 = pattern4.matcher(mobileNumber);
+        if(matcher4.matches()){
+            System.out.println("valid");
+        }
+        else {
+            System.out.println("Invalid");
+        }
+
     }
 }
